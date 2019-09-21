@@ -12,7 +12,7 @@ class ProductResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function toArray($brequest)
+    public function toArray($request)
     {
         return [
           'name' => $this->name,
