@@ -22,24 +22,24 @@ trait ExceptionTrait
     return parent::render($request, $e);
   }
 
-  public function isModel($e)
+  protected function isModel($e)
   {
       return $e instanceof ModelNotFoundException;
   }
 
-  public function isHttp($e)
+  protected function isHttp($e)
   {
       return $e instanceof NotFoundHttpException;
   }
 
-  public function ModelResponse($e)
+  protected function ModelResponse($e)
   {
     return response( [
       'errors' => 'Product Model Not Found'
     ], Response::HTTP_NOT_FOUND);
   }
 
-  public function HttpResponse($e)
+  protected function HttpResponse($e)
   {
     return response( [
       'errors' => 'Incorrect route'
